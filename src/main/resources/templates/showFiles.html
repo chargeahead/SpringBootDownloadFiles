@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"></meta>
+<title>Insert title here</title>
+<style>
+  div {width:800px; margin:auto;}
+</style>
+</head>
+<body>
+
+  <div>
+    <h1>List of Files:</h1>
+    <div th:each="file: ${files}">
+      <a th:href="@{'/file/'+${file.getName()}}"><span th:text="${file.getName()}"/></a>
+      <span th:text="${file.length()/1024}"/>KB
+    </div>
+  </div>
+
+</body>
+</html>
